@@ -18,10 +18,10 @@ CONFIG = {
         "weights": {"wow": 0.25, "problem": 0.25, "viral": 0.20, "margin": 0.15, "competition": 0.15}
     },
     "AI": {
-        # هادي هي النقطة اللي صححتي - اسم الموديل متغير
+        # FIXED: قللنا الأرقام باش ما يطيحش إلا كانو المنتجات قلال
         "provider": os.getenv("AI_PROVIDER", "groq"), # groq | gemini | openai
-        "model": os.getenv("AI_MODEL_NAME", "llama-3.1-70b-versatile"), # تقدر تبدلو لـ gemini-3.7-flash لاحقا
-        "max_products_to_judge": 15,
-        "final_winners": 5
+        "model": os.getenv("AI_MODEL_NAME", "llama-3.1-70b-versatile"),
+        "max_products_to_judge": 10,  # كان 15 -> دابا 10 باش يوالم الـ CJ
+        "final_winners": 3  # كان 5 -> دابا 3 باش يضمن يلقى 3 ديما
     }
 }
